@@ -26,7 +26,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function fruebel(){
-		echo "Hola mundo";
+		echo "Hola mundo soy jesus";
 	}
 
 	public function prueba(){
