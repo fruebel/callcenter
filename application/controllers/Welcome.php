@@ -1,5 +1,6 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php 
+session_start();
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
@@ -8,10 +9,10 @@ class Welcome extends CI_Controller {
 	 *
 	 * Maps to the following URL
 	 * 		http://example.com/index.php/welcome
-	 *	- or -
+	 *	- or -  
 	 * 		http://example.com/index.php/welcome/index
 	 *	- or -
-	 * Since this controller is set as the default controller in
+	 * Since this controller is set as the default controller in 
 	 * config/routes.php, it's displayed at http://example.com/
 	 *
 	 * So any other public methods not prefixed with an underscore will
@@ -20,36 +21,76 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('Templates/head_view');
-		$this->load->view('Templates/header_view');
-		$this->load->view('Templates/end_view');
+
+		if (isset($_SESSION['userid'])){
+			redirect('Inicio');
+		}
+		else
+		{		
+			$this->load->view('templates/head_view');
+			//$this->load->view('templates/header_view');
+			$this->load->view('login_view');
+			$this->load->view('templates/end_view');
+		}	
 	}
 
-	public function fruebel(){
-		echo "Hola mundo soy";
+	public function verificalogin(){
+
+		$data = array(
+					'usuario'=>$_POST['usuario'],
+					'contrasenia'=>$_POST['password']
+				);
+			
+		$this->load->model('Login_model');
+		$respuesta = $this->Login_model->verifica($data);
+
+		/*obtengo valores de inicio de session*/
+		
+		if ($respuesta['respuesta'] == 'OK'){
+
+			$_SESSION['nombre_completo'] = $respuesta['nombre_completo'];
+			$_SESSION['userid'] = $respuesta['userid'];
+			$_SESSION['usuario'] = $respuesta['usuario'];
+			$_SESSION['id_modulo'] = 0;
+			$_SESSION['id_funcion'] = 0;			
+			$_SESSION['email'] = $respuesta['email'];
+			$_SESSION['ultima_entrada'] = $respuesta['ultima_entrada'];
+
+			/*if ($respuesta['cuenta_maestra'] == 1){
+				$_SESSION['tipoCuenta'] = "Maestra";   
+				$_SESSION['idCuentaMaestra'] = $_SESSION['userid'];
+			}	
+			else{
+				$_SESSION['tipoCuenta'] = "";
+				$_SESSION['idCuentaMaestra'] = $respuesta["id_depende_cuenta_maestra"];
+				$_SESSION['cuenta_maestra_picco'] = $this->Login_model->obtengo_cuenta_maestra_subusuario($_SESSION['idCuentaMaestra']);
+			}
+			*/			
+		}	
+		/*************************************/
+
+		echo json_encode($respuesta);
 	}
 
-	public function prueba(){
-		$this->load->view('Templates/head_view');
-		$this->load->view('Templates/header_view');
-		$this->load->view('prueba/prueba');
-		$this->load->view('Templates/end_view');
+	public function cerrar_sesion(){
+
+		session_destroy();
+		redirect('Inicio');
+
 	}
 
-	public function inserta(){
-		$data = array('userid' => $_POST['userid'], 'nombre' => $_POST['nombre']);
-		$this->load->model('Usuarios_model');
-		$respuesta = $this->Usuarios_model->inserta($data);
-		echo $respuesta;
+	public function cambiarVariableSession(){
+
+		$_SESSION['menu_visible'] = $_POST['valor'];
+		$data = array(
+					'variable'=>$_POST['variable'],
+					'valor'=>$_POST['valor']
+				);
+		echo json_encode($data);
 	}
 
-	public function contenido(){
-		//$this->load->view('Templates/head_view');
-		//$this->load->view('Templates/header_view');
-		$this->load->model('Usuarios_model');
-		$respuesta = $this->Usuarios_model->contenido();
-		echo $respuesta;
-		//$this->load->view('Templates/end_view');
-	}
 
 }
+
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */
