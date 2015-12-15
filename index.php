@@ -34,7 +34,6 @@
  * @link	http://codeigniter.com
  * @since	Version 1.0.0
  * @filesource
- * prueba de modificaciones para el repositorio
  */
 
 /*
