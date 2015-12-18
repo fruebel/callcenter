@@ -1,3 +1,12 @@
+
+<br> <br> <br> <br>
+
+<div class="row">
+
+    <div class="col-md-12">Usuarios</div>
+
+</div>
+
 <div class="contenido-principal"  style="height: 600px;" >
 
     <table id="tablainfo" class="table table-striped table-bordered table-hover table-condensed" cellspacing="0" width="100%" data-page-length='100' data-search="1">
@@ -234,7 +243,7 @@
     
     var camposPorReporte = {};
     /*Listas*/
-    lista_f('reportes','id_reporte','nombre','','comboReportes');
+    //lista_f('reportes','id_reporte','nombre','','comboReportes');
     
     
     $( "#accordion" ).accordion({
@@ -361,11 +370,12 @@
         });
     
     pinta_contenido();        
-    function pinta_contenido(valor){
+    function pinta_contenido(){
 
-     console.log(valor);
+        /*console.log(valor);
         if (typeof(valor) == "undefined")
             valor = '';      
+        */
 
         $.ajax({
 
@@ -375,7 +385,7 @@
                 url:'usuarios_contenido',
                 type:'POST',
                 async : false,
-                data:"valor=" + valor,
+                data:"valor=",
                 error: function (jqXHR, textStatus, errorThrown) {
                     // body...
                     alert('Se produjo un error : ' + errorThrown + ' '+ textStatus);

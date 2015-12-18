@@ -19,7 +19,7 @@ class Login_model extends CI_Model {
 
 		$respuesta = 'Verifica el usuario o contraseña';
 		$this->load->database();	
-		$this->db->select('userid, nombre , usuario , email , Fecha_Ultimo_Acceso');	 //select
+		$this->db->select('userid, nombre , usuario , email , Fecha_Ultimo_Acceso, u_plaza ,super_usuario');	 //select
 		$this->db->where($array); 								 //where
 		$query = $this->db->get('s_usuarios');					 //from			
 		$datos = '';
@@ -30,7 +30,9 @@ class Login_model extends CI_Model {
 			$data = array('userid'=>$row->userid,					   	
 					 'nombre_completo'=>$row->nombre,
 					 'usuario'=>$row->usuario,					 
-					 'email'=>$row->email,	
+					 'email'=>$row->email,
+					 'super_usuario' => $row->super_usuario,
+					 'u_plaza' => $row->u_plaza, 
 					 'ultima_entrada'=>strftime("%d de %B del %Y", strtotime($row->Fecha_Ultimo_Acceso)),					 
 					 'respuesta'=>'OK'
 			);

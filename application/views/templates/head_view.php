@@ -12,6 +12,9 @@
     <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/jquery-ui.min.css" rel="stylesheet">
 
+    <link href="<?php echo base_url();?>assets/css/jquery.qtip.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/dataTables.bootstrap.min.css" rel="stylesheet"-->
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,6 +27,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery-ui.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.qtip.min.js"></script>
+    <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
 
   </head>
   <body>

@@ -52,8 +52,10 @@ class Welcome extends CI_Controller {
 			$_SESSION['userid'] = $respuesta['userid'];
 			$_SESSION['usuario'] = $respuesta['usuario'];
 			$_SESSION['id_modulo'] = 0;
-			$_SESSION['id_funcion'] = 0;			
+			$_SESSION['id_funcion'] = 0;	
+			$_SESSION['u_plaza'] =$respuesta['u_plaza'];	
 			$_SESSION['email'] = $respuesta['email'];
+			$_SESSION['super_usuario'] = $respuesta['super_usuario'];
 			$_SESSION['ultima_entrada'] = $respuesta['ultima_entrada'];
 
 		
