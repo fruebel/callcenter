@@ -56,16 +56,7 @@ class Welcome extends CI_Controller {
 			$_SESSION['email'] = $respuesta['email'];
 			$_SESSION['ultima_entrada'] = $respuesta['ultima_entrada'];
 
-			/*if ($respuesta['cuenta_maestra'] == 1){
-				$_SESSION['tipoCuenta'] = "Maestra";   
-				$_SESSION['idCuentaMaestra'] = $_SESSION['userid'];
-			}	
-			else{
-				$_SESSION['tipoCuenta'] = "";
-				$_SESSION['idCuentaMaestra'] = $respuesta["id_depende_cuenta_maestra"];
-				$_SESSION['cuenta_maestra_picco'] = $this->Login_model->obtengo_cuenta_maestra_subusuario($_SESSION['idCuentaMaestra']);
-			}
-			*/			
+		
 		}	
 		/*************************************/
 
