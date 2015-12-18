@@ -33,7 +33,7 @@
               if ($result->num_rows()>0){
                 echo '<ul class="dropdown-menu">';
                 foreach ($result->result() as $row1) {
-                  echo '<li><a href="#">'.$row1->funcion.'</a></li>';
+                  echo '<li><a href="'.$row1->ruta.'">'.$row1->funcion.'</a></li>';
                 }
                 echo '</ul>';
               }
