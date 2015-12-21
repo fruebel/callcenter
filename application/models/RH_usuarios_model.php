@@ -461,7 +461,7 @@ class RH_usuarios_model extends CI_Model {
 
 					$nuevaFila .='<td><input '.$selecciona4.' type="checkbox" id="u_campania_'.$noCampanias.'" name="u_campania_'.$noCampanias.'"/>';
 					$nuevaFila .= '<input type="hidden" name="valu_campania_'.$noCampanias.'" value="'.$u_campania.'"></td>';
-					$nuevaFila .='<td><b>'.$campania.'</b></td>';
+					$nuevaFila .='<td>'.$campania.'</td>';
 					
 					$noCampanias ++;				
 					$nuevaFila .= '</tr>';	
