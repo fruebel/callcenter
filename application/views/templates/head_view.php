@@ -42,6 +42,10 @@
     <!--Custom  Js's-->      
     <script src="<?php echo base_url();?>assets/js/scrips_generales.js"></script>
 
+    <!--Calendario-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.datetimepicker.css"/>
+    <script src="<?php echo base_url();?>assets/js/jquery.datetimepicker.js"></script>    
+
   </head>
   <body>
 
