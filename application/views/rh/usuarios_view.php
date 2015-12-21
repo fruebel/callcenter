@@ -409,6 +409,7 @@
     lista_f('usrplazas','u_plaza','plaza','','cpo_plazas');
     lista_f('usrpuestos','u_puesto','puesto','','cbo_puesto');
     lista_f('s_usuarios','userid','nombre','u_status = 1 and u_puesto = 2 and u_plaza=<?php echo $_SESSION["u_plaza"];?>','cbo_jefedirecto');
+    lista_f('cat_estados',' id_estado','nombre_estado','','cbo_estado');
     
     
     $( "#accordion" ).accordion({
