@@ -73,5 +73,80 @@ class RH_usuarios extends CI_Controller {
 
 	}
 
+	public function usuarios_cambios(){
+
+		
+		if (isset($_POST['cbo_jefedirecto']))
+			$cbo_jefedirecto = $_POST['cbo_jefedirecto'];
+		else
+			$cbo_jefedirecto = 0;
+
+		if ($_POST['cbo_estatus_empleado'] == "")
+			$cbo_estatus_empleado = "1";
+		else
+			$cbo_estatus_empleado = $_POST['cbo_estatus_empleado'];
+
+
+
+		$mensaje = 'No se pudo ejecutar el insert';
+		$respuesta = false;		
+		$this->load->database();
+		//Armamos el query
+		$queryu = "";
+		$queryu = "update s_usuarios set ";
+		$queryu .= "u_plaza='".$_POST['cpo_plazas']."',";
+		$queryu .= "u_puesto='".$_POST['cbo_puesto']."',";
+		$queryu .= "u_jefedirecto='".$cbo_jefedirecto."',";					
+		$queryu .= "nombre='".$_POST['nombre_completo']."',";
+		$queryu .= "apaterno='".$_POST['apaterno']."',";
+		$queryu .= "amaterno='".$_POST['amaterno']."',";
+		$queryu .= "usuario='".$_POST['usuario_f']."',";
+		$queryu .= "contrasenia='".$_POST['contrasenia']."',";
+		$queryu .= "u_estado='".$_POST['cbo_estado']."',";
+		$queryu .= "direccion='".$_POST['direccion']."',";
+		$queryu .= "colonia='".$_POST['colonia']."',";
+		$queryu .= "cp='".$_POST['cp']."',";
+		$queryu .= "rfc='".$_POST['rfc']."',";
+		$queryu .= "imss='".$_POST['imss']."',";
+		$queryu .= "curp='".$_POST['curp']."',";
+		$queryu .= "sexo='".$_POST['cbo_sexo']."',";
+		$queryu .= "u_estadocivil='".$_POST['cbo_estado_civil']."',";
+		$queryu .= "lada='".$_POST['lada']."',";
+		$queryu .= "telefono='".$_POST['telefono']."',";
+		$queryu .= "email='".$_POST['email']."',";
+		$queryu .= "u_turno='".$_POST['cbo_turno']."',";
+		$queryu .= "cuentabanco='".$_POST['cuenta']."',";
+		$queryu .= "usuario_banco='".$_POST['usuario_banco']."',";
+		$queryu .= "contrasenia_banco='".$_POST['contrasenia_banco']."',";
+		$queryu .= "FechaAlta='".date('Y-m-d',strtotime(str_replace("/","-",$_POST['fechaalta'])))."',";
+		$queryu .= "FechaContratacion='".date('Y-m-d',strtotime(str_replace("/","-",$_POST['fecha_contratacion'])))."',";
+		$queryu .= "FechaTerminacion='".date('Y-m-d',strtotime(str_replace("/","-",$_POST['fecha_termino'])))."',";
+		$queryu .= "u_status='".$cbo_estatus_empleado."'";
+		$queryu .= " where userid=".$_POST['idRow'];
+
+		if ($this->db->query($queryu))
+		{			
+			$respuesta = true;
+			$mensaje = "Se ha actualizado el registro correctamente ";	
+		}
+		else{
+
+
+		}
+
+		$retorno = array('respuesta'=>$respuesta,"mensaje" => $mensaje,'contenido'=>$contenido);
+		echo json_encode($retorno);
+
+	}	
+
+	public function tablaCampaniasxUsuario(){
+
+		$data = array('id' =>  $_POST['id'] , 'accion' => $_POST['accion']);
+		$this->load->model('RH_usuarios_model');
+		$respuesta = $this->RH_usuarios_model->tablaCampaniasxUsuario($data);
+		echo json_encode($respuesta);	
+
+	}
+
 
 }

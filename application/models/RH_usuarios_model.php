@@ -66,7 +66,7 @@ class RH_usuarios_model extends CI_Model {
 				$estatus = 'activo';
 
 				$contenido .= '<tr>
-							    <td>
+							    <td nowrap>
 							    	<div class="btn btn-primary"  id="'.$row->userid.'"  onclick="editar(this);" data-toggle="modal" data-target="#fmodal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></div>
 							    	<div class="btn btn-primary"  id="'.$row->userid.'"  onclick="eliminar(this, '.$row->userid.');"  data-toggle="modal" data-target="#modal-eliminar" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
 							    </td>
@@ -385,22 +385,22 @@ class RH_usuarios_model extends CI_Model {
 		$sql .= "IDEmpleado";					
 		$sql .= ") values (";
 		
-		$sql .= "'".$data['cpo_plazas']."','".$data['cbo_puesto']."','".$cbo_jefedirecto."',";
+		$sql .= "'".$data['cpo_plazas']."','".$data['cbo_puesto']."','".$data['cbo_jefedirecto']."',";
 		$sql .= "'".$data['nombre_completo']."','".$data['apaterno']."','".$data['amaterno']."',";
 		$sql .= "'".$data['usuario_f']."','".$data['contrasenia']."','".$data['cbo_estado']."',";
 		$sql .= "'".$data['direccion']."','".$data['colonia']."','".$data['cp']."',";
 		$sql .= "'".$data['rfc']."','".$data['imss']."','".$data['curp']."',";
 		$sql .= "'".$data['cbo_sexo']."','".$data['cbo_estado_civil']."','".$data['lada']."',";
-		$sql .= "'".$telefono."','".$data['email']."','".$data['cbo_turno']."',";
+		$sql .= "'".$data['telefono']."','".$data['email']."','".$data['cbo_turno']."',";
 		$sql .= "'".$data['cuenta']."','".$data['usuario_banco']."','".$data['contrasenia_banco']."',";
 		$sql .= "'".date('Y-m-d',strtotime(str_replace("/","-",$data['fechaalta'])))."','".date('Y-m-d',strtotime(str_replace("/","-",$data['fecha_contratacion'])))."','".date('Y-m-d',strtotime(str_replace("/","-",$data['fecha_termino'])))."'";
 
-		$sql .= ",1,".$data['IDEmpleado'].")";
+		$sql .= ",1,0)";
 
 		if ($this->db->query($sql))
 		{			
 			$respuesta = true;
-			$mensaje = "Se ha insertado el registro correctamente " . $sql;	
+			$mensaje = "Se ha insertado el registro correctamente ";	
 		}
 		else{
 
@@ -409,6 +409,70 @@ class RH_usuarios_model extends CI_Model {
 
 		return array('respuesta'=>$respuesta,"mensaje" => $mensaje);
 
+	}
+
+	public function tablaCampaniasxUsuario($data){
+
+		$noCampanias = 1;
+		$nuevaFila = '';		
+		$userid = $data["id"];
+		$accion = $data["accion"];
+
+
+		$mensaje = 'No se pudo ejecutar el insert';
+		$respuesta = false;		
+		$this->load->database();
+
+		$sql = "select * from usrcampanias where activo = 1";
+		
+		if ($this->db->query($sql))		
+		{
+			$query = $this->db->query($sql);
+			if ($query->num_rows()>0)
+			{
+				foreach ($query->result() as $row) 		
+				{				
+					$u_campania = $row->u_campania;
+					$campania = $row->campania;
+					
+					if ($data["accion"] == 'editRow'){
+					
+						$sql = "select count(*) as permiso 
+						from campaniasxusuario 
+						where id_usuario =".$data["id"]." and id_campania=".$u_campania;	
+						if ($this->db->query($sql)){
+
+						$rsPermiso4 = $this->db->query($sql);
+						$rs4 = $rsPermiso4->row();
+						$permiso4 =  $rs4->permiso;												
+						$selecciona4 = "";
+						if ($permiso4 > 0)
+							$selecciona4 = "checked";
+
+
+						}
+
+					}
+					else
+						$selecciona4 = "";				
+					
+					
+					$nuevaFila .= '<tr>';
+
+					$nuevaFila .='<td><input '.$selecciona4.' type="checkbox" id="u_campania_'.$noCampanias.'" name="u_campania_'.$noCampanias.'"/>';
+					$nuevaFila .= '<input type="hidden" name="valu_campania_'.$noCampanias.'" value="'.$u_campania.'"></td>';
+					$nuevaFila .='<td><b>'.$campania.'</b></td>';
+					
+					$noCampanias ++;				
+					$nuevaFila .= '</tr>';	
+					
+				}
+			}
+							
+	    }
+	   	
+		return array("noCampanias" => $noCampanias,"sql" => $sql,"contenido" => $nuevaFila);
+			
 	}
 
 }

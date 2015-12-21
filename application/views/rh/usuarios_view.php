@@ -262,12 +262,22 @@
                                 </div>
 
                                 <div class="col-md-6">
+
                                     <h4><center>Menu de Seguridad</center></h4>
                                     <hr>
                                     <div id="mSeguridad" style="width:97%;overflow-y:auto;height:470px;">
-                                    </div> 
+                                    </div>
 
+                                    <br />
+                                    <h4><center>Campañas x Usuario</center></h4>
+                                    <hr>    
+
+                                    <table id="tableCampanias" style="width:100%">                                                                                                               
+                                    </table>
+                                    <input type="hidden" name="noCampanias" id="noCampanias" value="1">
+                                 
                                 </div>
+
                                 </div>
                             </div>                 
                         </div>            
@@ -377,6 +387,18 @@
                 $("#mSeguridad").html(data);
             } 
         });  
+
+        //arma opciones campanias
+        $.ajax({
+            url:"tablaCampaniasxUsuario",
+            type:"POST",
+            dataType: "json",
+            data:"id="+$('#idRow').val()+"&accion="+$('#accion').val(),
+            success: function(data){
+                $("#tableCampanias").html(data.contenido);
+                $("#noCampanias").val(data.noCampanias);
+            } 
+        });        
 
     });
    

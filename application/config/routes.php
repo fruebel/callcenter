@@ -60,6 +60,7 @@ $route['usuarios_bajas'] = 'RH_usuarios/usuarios_bajas'; //elimina
 $route['usuarios_cambios'] = 'RH_usuarios/usuarios_cambios';  //edita
 $route['usuarios_consulta'] = 'RH_usuarios/usuarios_consulta';  //consulta
 $route['usuarios_menu'] = 'RH_usuarios/usuarios_menu';  //consulta
+$route['tablaCampaniasxUsuario'] = 'RH_usuarios/tablaCampaniasxUsuario';
 
 
 /* End of file routes.php */
