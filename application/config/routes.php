@@ -49,6 +49,9 @@ $route['cerrarsesion'] = 'Welcome/cerrar_sesion';
 $route['cambiarVariable'] = 'Welcome/cambiarVariableSession';
 
 
+/*Generales*/
+$route['lista']  = 'Generales/lista';
+
 /*RH - Usuarios*/
 $route['usuarios'] = 'RH_usuarios/usuarios';  //vista inicial
 $route['usuarios_contenido'] = 'RH_usuarios/usuarios_contenido'; //muestra contenido
@@ -56,6 +59,8 @@ $route['usuarios_altas'] = 'RH_usuarios/usuarios_altas'; //registra
 $route['usuarios_bajas'] = 'RH_usuarios/usuarios_bajas'; //elimina
 $route['usuarios_cambios'] = 'RH_usuarios/usuarios_cambios';  //edita
 $route['usuarios_consulta'] = 'RH_usuarios/usuarios_consulta';  //consulta
+$route['usuarios_menu'] = 'RH_usuarios/usuarios_menu';  //consulta
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

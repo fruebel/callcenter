@@ -1,16 +1,28 @@
 
-<br> <br> <br> <br>
+<div class="container"  style="height: 600px; margin-top:100px;" >
 
-<div class="row">
+    <div class="row">
 
-    <div class="col-md-12">Usuarios</div>
+        <div class="col-md-12 col-md-offset-12" >
+            <div class="btn btn-primary" id="btn-agregar" data-toggle="modal" data-target="#fmodal" style="margin-left:-71px;" title="Nuevo">
+                <i class="fa fa-plus-square"></i>
+            </div>
+        </div>
 
-</div>
+    </div>
 
-<div class="contenido-principal"  style="height: 600px;" >
+    <br />
 
-    <table id="tablainfo" class="table table-striped table-bordered table-hover table-condensed" cellspacing="0" width="100%" data-page-length='100' data-search="1">
-    </table>
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <table id="tablainfo" class="table table-striped table-bordered table-hover table-condensed" cellspacing="0" width="100%" data-page-length='50' data-search="1">
+            </table>
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -46,55 +58,206 @@
                                 <div class="col-md-6">
                                     
                                     <div class="row">                            
-                                        <div class="col-md-3">Nombre</div>
-                                        <div class="col-md-9"><input type="text" id="nombre_completo" name="nombre_completo" class="form-control"  value="" placeholder="Nombre" required/></div>
+                                        <div class="col-md-3">Plaza</div>
+                                        <div class="col-md-9">
+                                            <select id="cpo_plazas" name="cpo_plazas" class="form-control" required>
+                                            </select>
+                                        </div>
                                     </div>    
                                     
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-md-3">Puesto</div>
+                                        <div class="col-md-9">
+                                            <select id="cbo_puesto" name="cbo_puesto" class="form-control" required></select>
+                                        </div>
+                                    </div>
+                                   
+                                   <br />
+
+                                    <div class="row">
+                                        <div class="col-md-3">Jefe Directo</div>
+                                        <div class="col-md-9"><select id="cbo_jefedirecto" name="cbo_jefedirecto" class="form-control" required></select></div>
+                                    </div>
+                                    
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-md-3">Nombre</div>
+                                        <div class="col-md-9"><input type="text" id="nombre_completo" name="nombre_completo" class="form-control"  value="" placeholder="Nombre" required/></div>
+                                    </div>                                    
+                                    
+
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-md-3">Apellido Paterno</div>
+                                        <div class="col-md-9"><input type="text" id="apaterno" name="apaterno" class="form-control"  value="" placeholder="Apellido Paterno" required/></div>
+                                    </div>                                    
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Apellido Materno</div>
+                                        <div class="col-md-9"><input type="text" id="amaterno" name="amaterno" class="form-control"  value="" placeholder="Apellido Materno" required/></div>
+                                    </div>
+
+                                    <br />
+
                                     <div class="row">
                                         <div class="col-md-3">Usuario</div>
                                         <div class="col-md-9"><input type="text" id="usuario_f" name="usuario_f" class="form-control"  value="" placeholder="Usuario" required/></div>
                                     </div>
-                                    
+
+                                    <br />   
+
                                     <div class="row">
                                         <div class="col-md-3">Contraseña</div>
                                         <div class="col-md-9"><input type="text" id="contrasenia" name="contrasenia" class="form-control"  value="" placeholder="Contraseña" required/></div>
-                                    </div>
-                                   
+                                    </div>  
+
+                                    <br />
+
                                     <div class="row">
-                                        <div class="col-md-3">Dirección</div>
-                                        <div class="col-md-9"><input type="text" id="direccion" name="direccion" class="form-control"  value="" placeholder="Dirección" required/></div>
+                                        <div class="col-md-3">Estado</div>
+                                        <div class="col-md-9"><select id="cbo_estado" name="cbo_estado" class="form-control"></select></div>
                                     </div>
-                                    
+
+                                    <br />  
+
                                     <div class="row">
-                                        <div class="col-md-3">Ciudad</div>
-                                        <div class="col-md-9"><input type="text" id="ciudad" name="ciudad" class="form-control"  value="" placeholder="Ciudad" required/></div>
-                                    </div>                                    
-                                    
+                                        <div class="col-md-3">Direcciòn</div>
+                                        <div class="col-md-9"><input type="text" id="direccion" name="direccion" class="form-control"  value="" placeholder="Direcciòn" required/></div>
+                                    </div>  
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Colonia</div>
+                                        <div class="col-md-9"><input type="text" id="colonia" name="colonia" class="form-control"  value="" placeholder="Colonia" required/></div>
+                                    </div>  
+
+                                    <br />    
+
                                     <div class="row">
                                         <div class="col-md-3">Codigo Postal</div>
-                                        <div class="col-md-9"><input type="text" id="cp" name="cp" class="form-control"  value="" placeholder="Codigo Postal" required/></div>
-                                    </div>                                    
+                                        <div class="col-md-9"><input type="text" id="cp" name="cp" class="form-control"  value="" placeholder="Codigo Postal"/></div>
+                                    </div>  
+                                    
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Rfc</div>
+                                        <div class="col-md-9"><input type="text" id="rfc" name="rfc" class="form-control"  value="" placeholder="Rfc"/></div>
+                                    </div>                                     
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Imss</div>
+                                        <div class="col-md-9"><input type="text" id="imss" name="imss" class="form-control"  value="" placeholder="Imss"/></div>
+                                    </div>  
+                                    
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Curp</div>
+                                        <div class="col-md-9"><input type="text" id="curp" name="curp" class="form-control"  value="" placeholder="Curp"/></div>
+                                    </div>  
+
+
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-md-3">Sexo</div>
+                                        <div class="col-md-9"><select id="cbo_sexo" name="cbo_sexo" class="form-control"></select></div>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="row">
+                                        <div class="col-md-3">Estado Civil</div>
+                                        <div class="col-md-9"><select id="cbo_estado_civil" name="cbo_estado_civil" class="form-control"></select></div>
+                                    </div>
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Lada</div>
+                                        <div class="col-md-9"><input type="text" id="lada" name="lada" class="form-control"  value="" placeholder="Lada"/></div>
+                                    </div>  
+
+                                    <br />    
 
                                     <div class="row">
                                         <div class="col-md-3">Telefono</div>
-                                        <div class="col-md-9"><input type="text" id="telefono" name="telefono" class="form-control"  value="" placeholder="Telefono" required/></div>
+                                        <div class="col-md-9"><input type="text" id="telefono" name="telefono" class="form-control"  value="" placeholder="Telefono"/></div>
+                                    </div>  
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Correo Electronico</div>
+                                        <div class="col-md-9"><input type="text" id="email" name="email" class="form-control"  value="" placeholder="Correo electronico"/></div>
+                                    </div>     
+
+                                    <br />    
+                                    <div class="row">
+                                        <div class="col-md-3">Turno</div>
+                                        <div class="col-md-9"><select id="cbo_turno" name="cbo_turno" class="form-control"></select></div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-md-3">Email</div>
-                                        <div class="col-md-9"><input type="text" id="email" name="email" class="form-control"  value="" placeholder="Email" required/></div>
-                                    </div>   
+
+                                    <br />    
 
                                     <div class="row">
-                                        <div class="col-md-3">Usuario Bloqueado</div>
-                                        <div class="col-md-9">
-                                        <select id="activo" name="activo" required class="form-control">
-                                            <option value="">Seleccione</option>
-                                            <option value="1">No</option>
-                                            <option value="2">Si</option> 
-                                        </select>
-                                        </div>
-                                    </div> 
+                                        <div class="col-md-3">Numero de Cuenta</div>
+                                        <div class="col-md-9"><input type="text" id="cuenta" name="cuenta" class="form-control"  value="" placeholder="Numero de Cuenta"/></div>
+                                    </div>                                                                                                           
+
+
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Usuario Banco</div>
+                                        <div class="col-md-9"><input type="text" id="usuario_banco" name="usuario_banco" class="form-control"  value="" placeholder="Usuario Banco"/></div>
+                                    </div>   
+
+
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Contraseña Banco</div>
+                                        <div class="col-md-9"><input type="text" id="contrasenia_banco" name="contrasenia_banco" class="form-control"  value="" placeholder="Contraseña Banco"/></div>
+                                    </div>   
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Fecha Alta</div>
+                                        <div class="col-md-9"><input type="text" id="fechaalta" name="fechaalta" class="form-control"  value="" placeholder="Fecha Alta"/></div>
+                                    </div>                                                                                                           
+
+
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Fecha Contrataciòn</div>
+                                        <div class="col-md-9"><input type="text" id="fecha_contratacion" name="fecha_contratacion" class="form-control"  value="" placeholder="Fecha Contrataciòn"/></div>
+                                    </div>   
+
+
+
+                                    <br />    
+
+                                    <div class="row">
+                                        <div class="col-md-3">Fecha Terminaciòn</div>
+                                        <div class="col-md-9"><input type="text" id="fecha_termino" name="fecha_termino" class="form-control"  value="" placeholder="Fecha Termino"/></div>
+                                    </div>                                                                            
 
                                 </div>
 
@@ -243,7 +406,9 @@
     
     var camposPorReporte = {};
     /*Listas*/
-    //lista_f('reportes','id_reporte','nombre','','comboReportes');
+    lista_f('usrplazas','u_plaza','plaza','','cpo_plazas');
+    lista_f('usrpuestos','u_puesto','puesto','','cbo_puesto');
+    lista_f('s_usuarios','userid','nombre','u_status = 1 and u_puesto = 2 and u_plaza=<?php echo $_SESSION["u_plaza"];?>','cbo_jefedirecto');
     
     
     $( "#accordion" ).accordion({
@@ -431,15 +596,40 @@
             },
             success: function (data) {
                 // body...
-                $('#nombre_completo').val(data.contenido.nombre_completo);
+
+                $('#nombre_completo').val(data.contenido.nombre.toUpperCase());
+                $('#apaterno').val(data.contenido.apaterno.toUpperCase());
+                $('#amaterno').val(data.contenido.amaterno.toUpperCase());
+                $('#usuario_f').val(data.contenido.usuario.toUpperCase());                          
+                $('#cpo_plazas').val(data.contenido.u_plaza);
+                $('#cbo_puesto').val(data.contenido.u_puesto);
+                $('#cbo_jefedirecto').val(data.contenido.u_jefedirecto);
+                $('#cbo_turno').val(data.contenido.u_turno);
+                $('#cbo_estatus_empleado').val(data.contenido.u_status);
+                $('#cbo_campania').val(data.contenido.u_campania);
                 $('#usuario_f').val(data.contenido.usuario);
                 $('#contrasenia').val(data.contenido.contrasenia);
-                $('#direccion').val(data.contenido.direccion);
-                $('#ciudad').val(data.contenido.ciudad);
+                $('#rfc').val(data.contenido.RFC.toUpperCase());
+                $('#imss').val(data.contenido.AfiliacionIMSS.toUpperCase());
+                $('#cbo_sexo').val(data.contenido.sexo);
+                //alert(data.contenido.u_estadocivil);
+                $('#cbo_estado_civil').val(data.contenido.u_estadocivil);
+                $('#direccion').val(data.contenido.direccion.toUpperCase());
+                $('#colonia').val(data.contenido.colonia.toUpperCase());
+                $('#cbo_estado').val(data.contenido.u_estado);
                 $('#cp').val(data.contenido.cp);
+                $('#lada').val(data.contenido.lada);
                 $('#telefono').val(data.contenido.telefono);
-                $('#email').val(data.contenido.email);
-                $('#activo').val(data.contenido.activo);
+                $('#email').val(data.contenido.email.toUpperCase());                                                        
+                $('#cuenta').val(data.contenido.cuentabanco);
+                $('#curp').val(data.contenido.curp.toUpperCase());
+                $('#usuario_banco').val(data.contenido.usuario_banco);
+                $('#contrasenia_banco').val(data.contenido.contrasenia_banco);
+                $('#cbo_categoria').val(data.contenido.u_CategoriaAgente);
+                $('#cbo_puesto').val(data.contenido.u_puesto);
+                $('#fechaalta').val(data.contenido.FechaAlta);
+                $('#fecha_contratacion').val(data.contenido.FechaContratacion);
+                $('#fecha_termino').val(data.contenido.FechaTerminacion);
 
             }
 
@@ -455,269 +645,17 @@
             } 
         }); 
 
-        $.ajax({
-            url:"listaCamposUsuario",
-            type:"POST",
-            dataType:'json',
-            data:' idUsuario='+ id_row,
-            success: function(data){
-                /*array = data.contenido; 
-                agregarCampos (array);*/ 
-                console.log('campos por usuario',data); 
-                if(data.respuesta)
-                {
-                    //contenido = jQuery.parseJSON(data.contenido);
-                    contenido = data.contenido;
-                    arrayReporte = contenido.reportes;
-                    arrayCamposXReporte = contenido.campos;
-                    arrayListaCampos = {};
-                    arrayCampos = {};
-                    campos = {};                                                
-                        
-                    for(key in arrayCamposXReporte)
-                    {                                       
-                        lista_campos = '<div style="width: 200px;">';
-                        for(key2 in arrayCamposXReporte[key])
-                        {
-                            if(arrayCamposXReporte[key][key2].checked == 1)
-                            {                                       
-                                lista_campos += arrayCamposXReporte[key][key2].alias +"<br/> ";
-                                id_campo = arrayCamposXReporte[key][key2].id_campo;             
-                                campos[id_campo] = id_campo;
-                            }                                   
-
-                        }                           
-                                
-                        lista_campos += '</div>';
-                        //console.log('lista_campos',arrayCamposXReporte[key]);
-                        arrayListaCampos[key] = lista_campos;
-                        arrayCampos[key] = campos;
-                        //agregarCampos(arrayCamposXReporte[key]);
-                        setTimeout(function() {                             
-                        }, 200);
-                    }
-
-                    for (i=0; i< arrayReporte.length; i++)
-                    {                                               
-                        id_reporte = arrayReporte[i].id_reporte;
-                        agregarReporte (arrayReporte[i].nombre, arrayReporte[i].id_reporte, arrayListaCampos[id_reporte], arrayCampos[id_reporte]);
-                        //console.log(arrayCampos[id_reporte]); 
-                        setTimeout(function() {                             
-                        }, 200);                        
-                    }
-                }
-                
-                  
-                
-            },
-            error:function(response){
-                console.log(response);
-            } 
-        });
+        
 
 
     }
      
     
-    function agregarCampos (arrayCampos) {
-        array = arrayCampos;
-        console.log(arrayCampos);
-        campo = '<span style="margin-left:20px;">Selecionar todos los campos del reporte:</span> <input type="checkbox" checked = "checked" id="todos_campos" name="todos_campos" value="" class="" style="margin-bottom:20px "/><br />';
-        i = 0;
-        contador = 0;
-        for (key in array)
-        {
-            i++;
-            if( i == 1)
-                campo += '<div style="float:left; padding-bottom: 10px; padding-right: 20px;">';
-            cheked = (array[key].checked == 1) ? "checked = checked" : ''; 
-            campo += '<input type="checkbox" '+cheked+' id="opc-'+ array[key].id_campo +'" name="opc-'+ array[key].id_campo +'" value="opc-'+ array[key].campo +'-'+array[key].alias+'" class="lista_campos"/>' + array[key].alias + '<br />';  
-            
-            if( i % 5 == 0)//agrupar de 5 en 5
-            {
-                campo += '</div>';                      
-                i = 0;                      
-            }
-
-            contador++;
-        }
-
-        $('#campos_reporte').html(campo);
-
-        $('.lista_campos').change(function () {
-                todos_seleccionados = false;
-
-                $('.lista_campos').each(function (){
-                 if (this.checked)  
-                    todos_seleccionados = true;
-                 else
-                 {
-                    todos_seleccionados = false;
-                    return false;
-                 }                      
-            });
-
-            if(todos_seleccionados)
-                $('#todos_campos').prop('checked', true);
-            else
-                $('#todos_campos').prop('checked', false);
-
-        });
-
-        $('#todos_campos').change(function(){
-
-            if (this.checked)
-            {
-                $('.lista_campos').each(function (){
-
-                    $(this).prop('checked', true); 
-                    
-                });
-            }
-            else
-            {
-                $('.lista_campos').each(function (){
-
-                    $(this).prop('checked', false); 
-                    
-                });
-            }                       
-
-        });
-
-        $('#opc-'+ array[key].id_campo).change();
-    }
-
-    function agregarReporte (reporte, id_reporte, lista_campos, campos) {
-                        
-        //si no existe
-        if($('#rep-'+id_reporte).length == 0 && id_reporte != '')
-        {       
-
-            btnEliminar = "<div class='btn btn-primary' value='' style='margin-right: 10px;' onclick='eliminarReporte("+id_reporte+");'>-</div>"
-            btnEditar = "<img src='<?php echo base_url();?>assets/img/recursos/edit64x64.png' onclick='editarReporte("+id_reporte+");' style='height: 34px; cursor:pointer;'/> ";
-            fila = "<div id='rep-"+id_reporte+"' name='rep-"+id_reporte+"' style='line-height: 25px; '>"+btnEliminar+btnEditar+"<span >"+reporte+"</span></div>";
-            
-            $('#listaReportes').append(fila);
-            
-            //asignar qtip2
-            $('#rep-'+id_reporte).qtip({
-                content: {
-                    text: lista_campos,
-                    title: reporte
-                },
-                style: {
-                    classes: 'qtip-tipped'
-                },
-                position: {
-                    target: 'mouse',
-                    adjust: {
-                        x: 20
-                    }
-                }
-            });
-            
-            camposPorReporte[id_reporte] = campos;
-            console.log('no existe');
-            
-        }
-        else
-        {       
-            
-            $('#rep-'+id_reporte).qtip('option', 'content.text', lista_campos);
-            camposPorReporte[id_reporte] = campos;
-            
-        }
-            console.log('agregar reporte',camposPorReporte);
-    }
-
-    function eliminarReporte (id_reporte) {
-                
-        $('#rep-'+id_reporte).fadeOut().remove();
-        //camposPorReporte[id_reporte] = campos;
-        //camposPorReporte.splice(id_reporte,1);
-        delete camposPorReporte[id_reporte];
-        console.log('eliminar reporte', camposPorReporte);
-    }
     
-    function editarReporte (id_reporte) {
-        
-        $('#btnGuardarCambios').fadeIn();
-        $("#comboReportes").val(id_reporte);
 
-        $.ajax({
-                url: "listaCamposReporte",
-                type: "POST",
-                dataType:'json',
-                data: 'id_reporte='+id_reporte,
-                success: function(data){
-                    console.log(data);                  
-                    //array = jQuery.parseJSON(data.contenido); 
-                    if(data.respuesta)
-                    {
-                        array = (data.contenido);          
-                        agregarCampos (array);   
 
-                        setTimeout(function(){
-                
-                            $('.lista_campos').each(function (){
-                                $(this).prop('checked', false);             
-                            });
-                            
-                            camposSeleccionados = camposPorReporte[id_reporte];
-
-                            for (key in camposSeleccionados)
-                            {
-                                id_campo = camposSeleccionados[key];
-                                $('#opc-'+id_campo).prop('checked', true).change();             
-                            }
-                            console.log(camposPorReporte);
-                        }, 300); 
-                    }
-                                 
-                }
-            });
-             
-    }
-
-    function rwCamposPorReporte() {
-        id_usuario = $('#idRow').val();
-        numReportes = Object.keys(camposPorReporte).length;
-        console.log('camposPorReporte', camposPorReporte);
-        camposPorReporte2 = JSON.stringify(camposPorReporte);
-        //console.log(camposPorReporte);
-        $.ajax({
-            url:"rwCamposPorReporte",
-            type:"POST",
-            dataType:'json',
-            data:'id_usuario='+id_usuario+'&camposPorReporte='+camposPorReporte2+'&numElem='+numReportes,
-            success: function(data){                
-                console.log(data);
-                if(data.respuesta)
-                {
-                    $('#mensaje').qtip('option', 'content.text', 'El registro se realizo exitosamente.');
-                    $('#mensaje').click();
-                }
-                else
-                {
-                    $('#mensaje').qtip('option', 'content.text', 'El registro no pudo realizarse, intente nuevamente.');
-                    $('#mensaje').click();
-                }
-                        
-
-                /*setTimeout(function () {
-                    $('#formulario').dialog('close');
-                },1000);*/
-
-                            
-            },
-            error:function(response){
-                console.log(response);
-                $('#mensaje').qtip('option', 'content.text', 'El registro no pudo realizarse, intente nuevamente.');
-                $('#mensaje').click();
-            } 
-        });
-    }
+   
+    
 
 </script>
 

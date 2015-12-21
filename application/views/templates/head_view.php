@@ -13,7 +13,9 @@
     <link href="<?php echo base_url();?>assets/css/jquery-ui.min.css" rel="stylesheet">
 
     <link href="<?php echo base_url();?>assets/css/jquery.qtip.css" rel="stylesheet">
-    <link href="<?php echo base_url();?>assets/css/dataTables.bootstrap.min.css" rel="stylesheet"-->
+    <!--link href="<?php echo base_url();?>assets/css/dataTables.bootstrap.min.css" rel="stylesheet"-->
+    <link href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet">
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,7 +30,17 @@
     <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery-ui.min.js"></script>
     <script src="<?php echo base_url();?>assets/js/jquery.qtip.min.js"></script>
-    <script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script>
+    <!--script src="<?php echo base_url();?>assets/js/jquery.dataTables.min.js"></script-->
+    <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    
+
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/simpletreemenu/simpletreemenu.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/js/simpletreemenu/simpletree.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!--Custom  Js's-->      
+    <script src="<?php echo base_url();?>assets/js/scrips_generales.js"></script>
 
   </head>
   <body>
