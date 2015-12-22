@@ -68,7 +68,7 @@ class RH_usuarios_model extends CI_Model {
 				$contenido .= '<tr>
 							    <td nowrap>
 							    	<div class="btn btn-primary"  id="'.$row->userid.'"  onclick="editar(this);" data-toggle="modal" data-target="#fmodal"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></div>
-							    	<div class="btn btn-primary"  id="'.$row->userid.'"  onclick="eliminar(this, '.$row->userid.');"  data-toggle="modal" data-target="#modal-eliminar" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+							    	<!--div class="btn btn-primary"  id="'.$row->userid.'"  onclick="eliminar(this, '.$row->userid.');"  data-toggle="modal" data-target="#modal-eliminar" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span></div-->
 							    </td>
 							    
 								<td>'.strtoupper($row->plaza).'</td>
@@ -438,7 +438,7 @@ class RH_usuarios_model extends CI_Model {
 					if ($data["accion"] == 'editRow'){
 					
 						$sql = "select count(*) as permiso 
-						from campaniasxusuario 
+						from usrcampaniasxusuario 
 						where id_usuario =".$data["id"]." and id_campania=".$u_campania;	
 						if ($this->db->query($sql)){
 

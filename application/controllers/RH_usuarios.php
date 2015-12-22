@@ -134,7 +134,7 @@ class RH_usuarios extends CI_Controller {
 
 		}
 
-		$retorno = array('respuesta'=>$respuesta,"mensaje" => $mensaje,'contenido'=>$contenido);
+		$retorno = array('respuesta'=>$respuesta,"mensaje" => $mensaje);
 		echo json_encode($retorno);
 
 	}	
@@ -148,5 +148,21 @@ class RH_usuarios extends CI_Controller {
 
 	}
 
+
+
+	public function usuariosxcampania()
+	{
+
+		if (!isset($_SESSION['userid'])){
+			redirect('Login');	
+		}
+		else{	
+			$this->load->database();
+			$this->load->view('templates/head_view');
+			$this->load->view('templates/header_view');	
+			$this->load->view('rh/usuariosxcampania_view');
+			$this->load->view('templates/end_view');	
+		}
+	}
 
 }

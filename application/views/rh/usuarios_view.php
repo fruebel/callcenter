@@ -49,7 +49,7 @@
                 </fieldset>
                 
                 <div id="accordion">
-                    <h3>Usuario</h3>
+                    <h3>Generales</h3>
                     <div>
                         <div class="modal-body">
                             <div class="container-fluid">
@@ -171,14 +171,14 @@
 
                                     <div class="row">
                                         <div class="col-md-3">Sexo</div>
-                                        <div class="col-md-9"><select id="cbo_sexo" name="cbo_sexo" class="form-control"></select></div>
+                                        <div class="col-md-9"><select id="cbo_sexo" name="cbo_sexo" class="form-control" required></select></div>
                                     </div>
 
                                     <br />
 
                                     <div class="row">
                                         <div class="col-md-3">Estado Civil</div>
-                                        <div class="col-md-9"><select id="cbo_estado_civil" name="cbo_estado_civil" class="form-control"></select></div>
+                                        <div class="col-md-9"><select id="cbo_estado_civil" name="cbo_estado_civil" class="form-control" required></select></div>
                                     </div>
 
                                     <br />    
@@ -202,62 +202,7 @@
                                         <div class="col-md-9"><input type="text" id="email" name="email" class="form-control"  value="" placeholder="Correo electronico"/></div>
                                     </div>     
 
-                                    <br />    
-                                    <div class="row">
-                                        <div class="col-md-3">Turno</div>
-                                        <div class="col-md-9"><select id="cbo_turno" name="cbo_turno" class="form-control"></select></div>
-                                    </div>
-
-
-                                    <br />    
-
-                                    <div class="row">
-                                        <div class="col-md-3">Numero de Cuenta</div>
-                                        <div class="col-md-9"><input type="text" id="cuenta" name="cuenta" class="form-control"  value="" placeholder="Numero de Cuenta"/></div>
-                                    </div>                                                                                                           
-
-
-
-                                    <br />    
-
-                                    <div class="row">
-                                        <div class="col-md-3">Usuario Banco</div>
-                                        <div class="col-md-9"><input type="text" id="usuario_banco" name="usuario_banco" class="form-control"  value="" placeholder="Usuario Banco"/></div>
-                                    </div>   
-
-
-
-                                    <br />    
-
-                                    <div class="row">
-                                        <div class="col-md-3">Contraseña Banco</div>
-                                        <div class="col-md-9"><input type="text" id="contrasenia_banco" name="contrasenia_banco" class="form-control"  value="" placeholder="Contraseña Banco"/></div>
-                                    </div>   
-
-                                    <br />    
-
-                                    <div class="row">
-                                        <div class="col-md-3">Fecha Alta</div>
-                                        <div class="col-md-9"><input type="text" id="fechaalta" name="fechaalta" class="form-control"  value="" placeholder="Fecha Alta"/></div>
-                                    </div>                                                                                                           
-
-
-
-                                    <br />    
-
-                                    <div class="row">
-                                        <div class="col-md-3">Fecha Contrataciòn</div>
-                                        <div class="col-md-9"><input type="text" id="fecha_contratacion" name="fecha_contratacion" class="form-control"  value="" placeholder="Fecha Contrataciòn"/></div>
-                                    </div>   
-
-
-
-                                    <br />    
-
-                                    <div class="row">
-                                        <div class="col-md-3">Fecha Terminaciòn</div>
-                                        <div class="col-md-9"><input type="text" id="fecha_termino" name="fecha_termino" class="form-control"  value="" placeholder="Fecha Termino"/></div>
-                                    </div>                                                                            
+                                                                                                   
 
                                 </div>
 
@@ -275,6 +220,14 @@
                                     <table id="tableCampanias" style="width:100%">                                                                                                               
                                     </table>
                                     <input type="hidden" name="noCampanias" id="noCampanias" value="1">
+
+
+                                    <br />
+                                    <h4><center>Estatus</center></h4>
+                                    <hr>  
+
+                                    <select id="cbo_estatus_empleado" name="cbo_estatus_empleado" class="form-control">                                         
+                                    </select>
                                  
                                 </div>
 
@@ -282,40 +235,68 @@
                             </div>                 
                         </div>            
                     </div>    
-                    <h3>Reportes</h3>
+                    <h3>Otros</h3>
                     <div>
                         <div class="modal-body">
                             <div class="container-fluid">
-                                <div class="row">
-                                    
-                                    <div class="col-md-12">
-                                        <label style="float:left; margin-right: 20px; line-height: 35px;">Reporte: </label> 
-                                    
-                                        <select id="comboReportes" name="comboReportes" class="form-control" style="float:left; width: 200px; margin-right: 20px;">
-                                        </select>
-                                    
-                                        <div id="btnAgregarReporte" class="btn btn-primary" style="float:left; ">Agregar Reporte</div>
-                                    </div> 
-                                    <div class="col-md-12">
-                                        <div id="campos_reporte" style="height: auto; min-height: 170px; margin-top: 20px; float:left; font-size: 12px;">
-                                        </div>
-                                    </div>
-                                        
-                                     <div class="col-md-12">
-                                        <div id="btnGuardarCambios" class="btn btn-primary" style="display:none;">Actualizar lista</div>             
-                                        
-                                        
-                                        <div id="listaReportes" style="margin-top: 30px; border:solid gray 1px; border-radius: 5px; padding: 10px; margin-bottom: 20px;">
-                                        </div>
+      
+                            <br />    
+                            <div class="row">
+                                <div class="col-md-3">Turno</div>
+                                <div class="col-md-9"><select id="cbo_turno" name="cbo_turno" class="form-control"></select></div>
+                            </div>
 
-                                        <fieldset id="" style="border:none; text-align:center;">
-                                            <p id="mensaje" name="mensaje"> </p>
-                                            <div id="" class="btn btn-primary" onclick="rwCamposPorReporte();">Registrar </div>
-                                        </fieldset>
-                                     </div>   
-                                                                            
 
-                                </div>
+                            <br />    
+
+                            <div class="row">
+                                <div class="col-md-3">Numero de Cuenta</div>
+                                <div class="col-md-9"><input type="text" id="cuenta" name="cuenta" class="form-control"  value="" placeholder="Numero de Cuenta"/></div>
+                            </div>                                                                                                           
+
+
+
+                            <br />    
+
+                            <div class="row">
+                                <div class="col-md-3">Usuario Banco</div>
+                                <div class="col-md-9"><input type="text" id="usuario_banco" name="usuario_banco" class="form-control"  value="" placeholder="Usuario Banco"/></div>
+                            </div>   
+
+
+
+                            <br />    
+
+                            <div class="row">
+                                <div class="col-md-3">Contraseña Banco</div>
+                                <div class="col-md-9"><input type="text" id="contrasenia_banco" name="contrasenia_banco" class="form-control"  value="" placeholder="Contraseña Banco"/></div>
+                            </div>   
+
+                            <br />    
+
+                            <div class="row">
+                                <div class="col-md-3">Fecha Alta</div>
+                                <div class="col-md-9"><input type="text" id="fechaalta" name="fechaalta" class="form-control"  value="" placeholder="Fecha Alta"/></div>
+                            </div>                                                                                                           
+
+
+
+                            <br />    
+
+                            <div class="row">
+                                <div class="col-md-3">Fecha Contrataciòn</div>
+                                <div class="col-md-9"><input type="text" id="fecha_contratacion" name="fecha_contratacion" class="form-control"  value="" placeholder="Fecha Contrataciòn"/></div>
+                            </div>   
+
+
+
+                            <br />    
+
+                            <div class="row">
+                                <div class="col-md-3">Fecha Terminaciòn</div>
+                                <div class="col-md-9"><input type="text" id="fecha_termino" name="fecha_termino" class="form-control"  value="" placeholder="Fecha Termino"/></div>
+                            </div>             
+
                             </div>
                         </div>
                     </div>
@@ -435,6 +416,8 @@
     lista_f('cat_sexo','id_sexo','sexo','','cbo_sexo');
     lista_f('usrturnos','u_turno','turno','','cbo_turno');
     lista_f('usrestadocivil','u_estadocivil','nombre','','cbo_estado_civil');
+    lista_f('cat_estatus_usuarios','id_estatus','estatus','','cbo_estatus_empleado');
+    
     
 
 
@@ -661,6 +644,17 @@
                 $('#fechaalta').val(data.contenido.FechaAlta);
                 $('#fecha_contratacion').val(data.contenido.FechaContratacion);
                 $('#fecha_termino').val(data.contenido.FechaTerminacion);
+
+                $.ajax({
+                    url:"tablaCampaniasxUsuario",
+                    type:"POST",
+                    dataType: "json",
+                    data:"id="+$('#idRow').val()+"&accion=editRow",
+                    success: function(data){
+                        $("#tableCampanias").html(data.contenido);
+                        $("#noCampanias").val(data.noCampanias);
+                    } 
+                });                 
 
             }
 

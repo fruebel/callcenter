@@ -63,5 +63,9 @@ $route['usuarios_menu'] = 'RH_usuarios/usuarios_menu';  //consulta
 $route['tablaCampaniasxUsuario'] = 'RH_usuarios/tablaCampaniasxUsuario';
 
 
+/*RH - Reporte Usuarios x Campaña*/
+$route['usuariosxcampania'] = 'RH_usuarios/usuariosxcampania';  //vista inicial
+$route['usuariosxcampania_contenido'] = 'RH_usuarios/usuariosxcampania_contenido'; //muestra contenido
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
